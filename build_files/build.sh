@@ -23,6 +23,7 @@ dnf5 install -y tmux
 dnf5 -y remove plasma-workspace plasma-* kde-*
 
 # install hyprland
+dnf copr enable solopasha/hyprland
 dnf5 -y install         \
     hyprland            \
     hyprpaper           \
@@ -35,6 +36,7 @@ dnf5 -y install         \
     qt6ct-kde           \
     hyprland-qt-support \
     hyprland-qtutils
+dnf copr disable solopasha/hyprland
 
 # more desktop-environment utils
 dnf5 -y install     \
