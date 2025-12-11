@@ -20,7 +20,7 @@ dnf5 install -y tmux
 # dnf5 -y copr disable ublue-os/staging
 
 # remove kde plasma
-#dnf5 -y remove plasma-workspace plasma-* kde-*
+dnf5 -y remove plasma-workspace plasma-* kde-*
 
 # install hyprland
 dnf5 -y copr enable solopasha/hyprland
