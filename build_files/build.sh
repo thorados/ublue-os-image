@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux
+dnf5 install -y tmux chezmoi
 
 # Use a COPR Example:
 #
@@ -20,7 +20,10 @@ dnf5 install -y tmux
 # dnf5 -y copr disable ublue-os/staging
 
 # remove kde plasma
-dnf5 -y remove plasma-workspace plasma-* kde-*
+dnf5 -y remove plasma-workspace plasma-* kde-* @gnome-desktop
+
+# install cosmic-desktop
+dnf5 -y @cosmic-desktop-environment
 
 # install hyprland
 dnf5 -y copr enable solopasha/hyprland
@@ -50,3 +53,6 @@ dnf5 -y install     \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+
+
