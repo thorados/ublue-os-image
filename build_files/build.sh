@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux chezmoi neovim btop
+dnf5 install -y tmux chezmoi neovim btop zsh
 
 # Use a COPR Example:
 #
@@ -46,7 +46,6 @@ dnf5 -y copr disable solopasha/hyprland
 dnf5 -y install     \
     waybar          \
     kitty           \
-#    sddm            \
     pipewire        \
     rofi            \
     brightnessctl
