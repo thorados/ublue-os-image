@@ -20,7 +20,7 @@ dnf5 install -y tmux chezmoi neovim btop zsh
 # dnf5 -y copr disable ublue-os/staging
 
 # remove kde plasma
-dnf5 remove -y plasma-workspace plasma-* kde-* sddm gnome-* gdm
+dnf5 remove -y plasma-* kde-* sddm gnome-* gdm
 #dnf5 group remove -y workstation-product-environment kde-desktop-environment gnome-desktop
 
 # install cosmic-desktop
