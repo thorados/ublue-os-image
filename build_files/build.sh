@@ -20,11 +20,11 @@ dnf5 install -y tmux chezmoi
 # dnf5 -y copr disable ublue-os/staging
 
 # remove kde plasma
-dnf5 -y remove plasma-workspace plasma-* kde-*
-dnf5 -y group remove workstation-product-environment @kde-desktop-environment @gnome-desktop
+dnf5 remove -y plasma-workspace plasma-* kde-* sddm gnome-* gdm
+#dnf5 group remove -y workstation-product-environment kde-desktop-environment gnome-desktop
 
 # install cosmic-desktop
-dnf5 -y group install @cosmic-desktop-environment
+dnf5 group install -y cosmic-desktop-environment
 
 # install hyprland
 dnf5 -y copr enable solopasha/hyprland
@@ -54,6 +54,10 @@ dnf5 -y install     \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+
+
+
 
 
 
