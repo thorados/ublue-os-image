@@ -36,7 +36,7 @@ dnf5 install -y     \
 # dnf5 -y copr disable ublue-os/staging
 
 # install cosmic-desktop
-dnf5 group install -y cosmic-desktop-environment
+dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice
 
 # install hyprland
 dnf5 copr enable -y solopasha/hyprland
