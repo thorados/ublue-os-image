@@ -9,13 +9,14 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# remove kde plasma and gnome
+# remove image packages
 dnf5 remove -y      \
     plasma-*        \
     kde-*           \
     sddm            \
     gnome-*         \
-    gdm
+    gdm             \
+    firefox
 
 # this installs a package from fedora repos
 dnf5 install -y     \
@@ -36,7 +37,7 @@ dnf5 install -y     \
 # dnf5 -y copr disable ublue-os/staging
 
 # install cosmic-desktop
-dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird
+dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox
 
 # install hyprland
 dnf5 copr enable -y solopasha/hyprland
