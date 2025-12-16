@@ -16,17 +16,19 @@ dnf5 remove -y      \
     sddm            \
     gnome-*         \
     gdm             \
-    firefox
+    firefox         \
+    nheko           \
+    nwg-*
 
 # this installs a package from fedora repos
-dnf5 install -y     \
-    tmux            \
-    chezmoi         \
-    neovim          \
-    btop            \
-    zsh             \
-    steam           \
-    mangohud        \
+dnf5 install -y         \
+    tmux                \
+    chezmoi             \
+    neovim              \
+    btop                \
+    zsh                 \
+    steam               \
+    mangohud            \
     gamescope
 
 # Use a COPR Example:
@@ -56,12 +58,14 @@ dnf5 install -y         \
 dnf5 copr disable -y solopasha/hyprland
 
 # install windows manager utils
-dnf5 install -y     \
-    waybar          \
-    kitty           \
-    pipewire        \
-    rofi            \
-    brightnessctl
+dnf5 install -y         \
+    waybar              \
+    kitty               \
+    pipewire            \
+    rofi                \
+    brightnessctl       \
+    murrine-engine      \
+    gnome-themes-extra
 
 #### Example for enabling a System Unit File
 
