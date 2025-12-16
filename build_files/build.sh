@@ -9,8 +9,24 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+# remove kde plasma and gnome
+dnf5 remove -y      \
+    plasma-*        \
+    kde-*           \
+    sddm            \
+    gnome-*         \
+    gdm
+
 # this installs a package from fedora repos
-dnf5 install -y tmux chezmoi neovim btop zsh steam mangohud gamescope
+dnf5 install -y     \
+    tmux            \
+    chezmoi         \
+    neovim          \
+    btop            \
+    zsh             \
+    steam           \
+    mangohud        \
+    gamescope
 
 # Use a COPR Example:
 #
@@ -19,16 +35,12 @@ dnf5 install -y tmux chezmoi neovim btop zsh steam mangohud gamescope
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-# remove kde plasma
-dnf5 remove -y plasma-* kde-* sddm gnome-* gdm
-#dnf5 group remove -y workstation-product-environment kde-desktop-environment gnome-desktop
-
 # install cosmic-desktop
 dnf5 group install -y cosmic-desktop-environment
 
 # install hyprland
-dnf5 -y copr enable solopasha/hyprland
-dnf5 -y install         \
+dnf5 copr enable -y solopasha/hyprland
+dnf5 install -y         \
     hyprland            \
     hyprpaper           \
     hyprpicker          \
@@ -40,10 +52,10 @@ dnf5 -y install         \
     qt6ct-kde           \
     hyprland-qt-support \
     hyprland-qtutils
-dnf5 -y copr disable solopasha/hyprland
+dnf5 copr disable -y solopasha/hyprland
 
-# more desktop-environment utils
-dnf5 -y install     \
+# install windows manager utils
+dnf5 install -y     \
     waybar          \
     kitty           \
     pipewire        \
@@ -53,13 +65,6 @@ dnf5 -y install     \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
-
-
-
-
-
-
 
 
 
