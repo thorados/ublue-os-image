@@ -41,6 +41,11 @@ dnf5 install -y         \
 # install cosmic-desktop
 dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox
 
+# install nwg-look
+dnf5 copr enable -y njkevlani/nwg-look
+dnf5 install -y nwg-look
+dnf5 copr disable -y njkevlani/nwg-look
+
 # install hyprland
 dnf5 copr enable -y solopasha/hyprland
 dnf5 install -y         \
