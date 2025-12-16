@@ -69,7 +69,7 @@ dnf5 install -y         \
     pipewire            \
     rofi                \
     brightnessctl       \
-    murrine-engine      \
+    gtk-murrine-engine  \
     gnome-themes-extra
 
 #### Example for enabling a System Unit File
