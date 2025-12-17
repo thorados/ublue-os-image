@@ -39,7 +39,7 @@ dnf5 install -y         \
 # dnf5 -y copr disable ublue-os/staging
 
 # install cosmic-desktop
-dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox --skip-broken
+dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox,pipewire
 
 # install nwg-look
 dnf5 copr enable -y njkevlani/nwg-look
