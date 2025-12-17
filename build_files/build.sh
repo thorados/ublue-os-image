@@ -13,7 +13,7 @@ set -ouex pipefail
 dnf5 remove -y      \
     plasma-*        \
     kde-*           \
-    sddm            \
+    sddm*           \
     gnome-*         \
     gdm             \
     firefox         \
@@ -39,7 +39,7 @@ dnf5 install -y         \
 # dnf5 -y copr disable ublue-os/staging
 
 # install cosmic-desktop
-dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox --allowerasing
+dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox --skip-broken
 
 # install nwg-look
 dnf5 copr enable -y njkevlani/nwg-look
