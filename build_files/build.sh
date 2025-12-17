@@ -76,6 +76,8 @@ dnf5 install -y             \
     nm-connection-editor    \
     rofi                    \
     brightnessctl           \
+    blueman                 \
+    network-manager-applet  \
     wl-gammactl             \
     gtk-murrine-engine      \
     gnome-themes-extra
