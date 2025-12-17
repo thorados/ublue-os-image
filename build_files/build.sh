@@ -68,14 +68,16 @@ dnf5 install -y         \
 dnf5 copr disable -y solopasha/hyprland
 
 # install windows manager utils
-dnf5 install -y         \
-    waybar              \
-    kitty               \
-    pipewire            \
-    rofi                \
-    brightnessctl       \
-    wl-gammactl         \
-    gtk-murrine-engine  \
+dnf5 install -y             \
+    waybar                  \
+    kitty                   \
+    pipewire                \
+    pavucontrol             \
+    nm-connection-editor    \
+    rofi                    \
+    brightnessctl           \
+    wl-gammactl             \
+    gtk-murrine-engine      \
     gnome-themes-extra
 
 #### Example for enabling a System Unit File
