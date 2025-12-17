@@ -46,6 +46,11 @@ dnf5 copr enable -y njkevlani/nwg-look
 dnf5 install -y nwg-look
 dnf5 copr disable -y njkevlani/nwg-look
 
+# install noisetorch
+dnf5 copr enable -y lochnair/NoiseTorch
+dnf5 install -y noisetorch
+dnf5 copr disable -y lochnair/NoiseTorch
+
 # install hyprland
 dnf5 copr enable -y solopasha/hyprland
 dnf5 install -y         \
