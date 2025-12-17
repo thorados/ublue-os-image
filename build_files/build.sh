@@ -20,15 +20,20 @@ dnf5 remove -y      \
     nheko           \
     nwg-*
 
+# remove message of the day
+rm -f /etc/profile.d/user-motd.sh
+
 # this installs a package from fedora repos
-dnf5 install -y         \
-    tmux                \
-    chezmoi             \
-    neovim              \
-    btop                \
-    zsh                 \
-    steam               \
-    mangohud            \
+dnf5 install -y             \
+    tmux                    \
+    chezmoi                 \
+    neovim                  \
+    btop                    \
+    zsh                     \
+    zsh-autosuggestions     \
+    zsh-syntax-highlighting \
+    steam                   \
+    mangohud                \
     gamescope
 
 # Use a COPR Example:
