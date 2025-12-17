@@ -69,6 +69,7 @@ dnf5 install -y         \
     pipewire            \
     rofi                \
     brightnessctl       \
+    wl-gammactl         \
     gtk-murrine-engine  \
     gnome-themes-extra
 
