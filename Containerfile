@@ -4,7 +4,7 @@ COPY build_files /
 
 # Base Image
 #FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
-FROM quay.io/fedora-ostree-desktops/cosmic-atomic:rawhide
+FROM quay.io/fedora-ostree-desktops/cosmic-atomic:43
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
