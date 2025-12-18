@@ -3,8 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-#FROM ghcr.io/ublue-os/bazzite-nvidia-open:stable
-FROM quay.io/fedora-ostree-desktops/cosmic-atomic:43
+FROM ghcr.io/ublue-os/ucore:stable-nvidia
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -35,14 +34,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
-
-COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:main-43 / /tmp/akmods-nvidia
-RUN find /tmp/akmods-nvidia
-## optionally install remove old and install new kernel
-dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
-## install ublue support package and desired kmod(s)
-RUN dnf5 install -y /tmp/rpms/ublue-os/ublue-os-nvidia*.rpm
-RUN dnf5 install -y /tmp/rpms/kmods/kmod-nvidia*.rpm
 
 ### LINTING
 ## Verify final image and contents are correct.
