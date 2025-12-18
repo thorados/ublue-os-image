@@ -26,6 +26,7 @@ rm -f /etc/profile.d/user-motd.sh
 # this installs a package from fedora repos
 dnf5 install -y             \
     tmux                    \
+    chsh                    \
     chezmoi                 \
     neovim                  \
     btop                    \
@@ -84,13 +85,11 @@ dnf5 install -y             \
     blueman                 \
     network-manager-applet  \
     wl-gammactl             \
+    breeze-cursor-theme     \
     gtk-murrine-engine      \
     gnome-themes-extra
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
-
-
 
