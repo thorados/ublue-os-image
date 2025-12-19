@@ -35,15 +35,15 @@ dnf5 install -y     \
     openssl
 
 # remove image packages
-dnf5 remove -y      \
-    plasma-*        \
-    kde-*           \
-    sddm*           \
-    gnome-*         \
-    gdm             \
-    firefox         \
-    nheko           \
-    nwg-*
+#dnf5 remove -y      \
+#    plasma-*        \
+#    kde-*           \
+#    sddm*           \
+#    gnome-*         \
+#    gdm             \
+#    firefox         \
+#    nheko           \
+#    nwg-*
 
 # remove message of the day
 rm -f /etc/profile.d/user-motd.sh
@@ -56,6 +56,7 @@ dnf5 install -y             \
     neovim                  \
     btop                    \
     zsh                     \
+    virt-viewer             \
     zsh-autosuggestions     \
     zsh-syntax-highlighting \
     steam                   \
