@@ -18,9 +18,11 @@ dnf5 install -y                      \
     xorg-x11-drv-nvidia-cuda         \
     xorg-x11-drv-nvidia-cuda-libs    \
     vulkan                           \
-    nvidia-vaapi-driver              \
+    libva-nvidia-driver              \
     libva-utils                      \
-    vdpauinfo
+    vdpauinfo                        \
+    ffmpeg-free                      \
+    libavcodec-freeworld
 
 # NVIDIA Secureboot
 dnf5 install -y     \
