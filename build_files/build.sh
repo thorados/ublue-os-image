@@ -10,40 +10,19 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # RPM Fusion
-dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# NVIDIA
-dnf5 install -y                       \
-    akmod-nvidia                      \
-    rpmfusion-nonfree-release-tainted \
-    xorg-x11-drv-nvidia-cuda          \
-    xorg-x11-drv-nvidia-cuda-libs     \
-    vulkan                            \
-    libva-nvidia-driver               \
-    libva-utils                       \
-    vdpauinfo                         \
-    ffmpeg-free                       \
-    libavcodec-freeworld
-    
-#dnf5 swap -y akmod-nvidia akmod-nvidia-open
-
-# NVIDIA Secureboot
-dnf5 install -y     \
-    kmodtool        \
-    akmods          \
-    mokutil         \
-    openssl
 
 # remove image packages
-#dnf5 remove -y      \
-#    plasma-*        \
-#    kde-*           \
-#    sddm*           \
-#    gnome-*         \
-#    gdm             \
-#    firefox         \
-#    nheko           \
-#    nwg-*
+dnf5 remove -y      \
+    plasma-*        \
+    kde-*           \
+    sddm*           \
+    gnome-*         \
+    gdm             \
+    firefox         \
+    nheko           \
+    nwg-*
 
 # remove message of the day
 rm -f /etc/profile.d/user-motd.sh
@@ -71,7 +50,7 @@ dnf5 install -y             \
 # dnf5 -y copr disable ublue-os/staging
 
 # install cosmic-desktop
-# dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox,pipewire*
+dnf5 group install -y cosmic-desktop-environment --exclude=libreoffice*,thunderbird,firefox,pipewire*
 
 # install nwg-look
 dnf5 copr enable -y njkevlani/nwg-look
