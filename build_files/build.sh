@@ -25,7 +25,7 @@ dnf5 install -y                       \
     ffmpeg-free                       \
     libavcodec-freeworld
     
-dnf5 swap -y akmod-nvidia akmod-nvidia-open
+#dnf5 swap -y akmod-nvidia akmod-nvidia-open
 
 # NVIDIA Secureboot
 dnf5 install -y     \
