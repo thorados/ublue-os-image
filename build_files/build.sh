@@ -30,7 +30,7 @@ rm -f /etc/profile.d/user-motd.sh
 # this installs a package from fedora repos
 dnf5 install -y             \
     tmux                    \
-    chsh                    \
+    util-linux              \
     chezmoi                 \
     neovim                  \
     btop                    \
