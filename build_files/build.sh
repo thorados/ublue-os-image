@@ -13,16 +13,19 @@ set -ouex pipefail
 dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # NVIDIA
-dnf5 install -y                      \
-    akmod-nvidia-open                \
-    xorg-x11-drv-nvidia-cuda         \
-    xorg-x11-drv-nvidia-cuda-libs    \
-    vulkan                           \
-    libva-nvidia-driver              \
-    libva-utils                      \
-    vdpauinfo                        \
-    ffmpeg-free                      \
+dnf5 install -y                       \
+    akmod-nvidia                      \
+    rpmfusion-nonfree-release-tainted \
+    xorg-x11-drv-nvidia-cuda          \
+    xorg-x11-drv-nvidia-cuda-libs     \
+    vulkan                            \
+    libva-nvidia-driver               \
+    libva-utils                       \
+    vdpauinfo                         \
+    ffmpeg-free                       \
     libavcodec-freeworld
+    
+dnf5 swap -y akmod-nvidia akmod-nvidia-open
 
 # NVIDIA Secureboot
 dnf5 install -y     \
